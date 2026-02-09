@@ -1,5 +1,22 @@
-# Vue 3 + Vite
+# CRUD de Usuarios - Vue 3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aplicación web que implementa un CRUD de usuarios usando Vue 3 y consumo de una API pública.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Tecnologías
+- Vue 3
+- JavaScript
+- HTML5
+- CSS
+
+## Funcionalidades
+- Listado de usuarios
+- Crear usuario
+- Editar usuario
+- Eliminar usuario
+- Validaciones de formulario
+- Loader durante carga de datos
+
+## Instalación
+```bash
+npm install
+npm run dev
