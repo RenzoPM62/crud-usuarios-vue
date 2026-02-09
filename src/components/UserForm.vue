@@ -1,35 +1,41 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <input v-model="localForm.name" placeholder="Nombre" required />
-    <input v-model="localForm.username" placeholder="Usuario" required />
-    <input v-model="localForm.email" type="email" placeholder="Email" required />
-    <input v-model="localForm.phone" placeholder="Teléfono" required />
+    <div class="mb-2">
+        <input v-model="localForm.name" class="form-control" placeholder="Nombre" required />
+    </div>
+    <div class="mb-2">
+        <input v-model="localForm.username" class="form-control" placeholder="Usuario" required />
+    </div>
+    <div class="mb-2">
+        <input v-model="localForm.email" type="email" class="form-control" placeholder="Email" required />
+    </div>
+    <div class="mb-2">
+        <input v-model="localForm.phone" class="form-control" placeholder="Teléfono" required />
+    </div>
 
-    <button type="submit">
-      {{ localForm.id ? 'Actualizar' : 'Guardar' }}
+    <button type="submit" class="btn btn-success w-100" @click="submitForm">
+        {{ localForm.id ? 'Actualizar' : 'Guardar' }}
     </button>
-  </form>
 </template>
 
 <script>
 export default {
-  props: {
-    form: Object
-  },
-  data() {
-    return {
-      localForm: { ...this.form }
+    props: {
+        form: Object
+    },
+    data() {
+        return {
+            localForm: { ...this.form }
+        }
+    },
+    watch: {
+        form(newValue) {
+            this.localForm = { ...newValue }
+        }
+    },
+    methods: {
+        submitForm() {
+            this.$emit('submit', this.localForm)
+        }
     }
-  },
-  watch: {
-    form(newValue) {
-      this.localForm = { ...newValue }
-    }
-  },
-  methods: {
-    submitForm() {
-      this.$emit('submit', this.localForm)
-    }
-  }
 }
 </script>
